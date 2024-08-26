@@ -1,0 +1,48 @@
+import example.*    // el * toma todo el codigo, sino se pone example.<nameObject>
+
+describe "Test prueba" {
+
+    test "energia de pepita" {
+        pepita.volar(20)
+        assert.equals(70, pepita.energia())
+        pepita.comer(alpiste)
+        assert.equals(90, pepita.energia())
+    }
+
+       //test booleano
+    test " pepita cansada" {
+        pepita.volar(80)
+        assert.that(pepita.estaCansada())
+     // assert.that() testea si el valor dado es verdadero o no. 
+
+    /* Adentro de pepita
+        method estaCansada(){
+            return energia <= 50
+        }
+     */
+    }
+}
+
+describe "roque" {
+
+    method initialize() {       //hace que todos los test dentro del describe tengan/inicien con lo que
+        roque.ave(pepon)       // tiene el initialize adentro.
+
+    }
+
+    test "roque tiene ave"{
+        roque.alimentar(manzana)
+        assert.equals(pepon.energia(), pepon.energia()) 
+        // asser.equals(X, Y) compara el primer valor X, con el segundo valor dado Y
+        // si coinciden se pasa el test
+
+    }
+
+    test "pepon entrena con roque"{
+        roque.entrenar(30)
+        assert.equals(pepon.energia(), pepon.energia())
+
+    }
+    
+}
+
